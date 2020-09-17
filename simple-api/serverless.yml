@@ -1,0 +1,16 @@
+service: simple-api
+frameworkVersion: '1'
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: <YOUR_AWS_CREDENTIAL_PROFILE>
+
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
